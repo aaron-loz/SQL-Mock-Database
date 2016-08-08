@@ -3,9 +3,10 @@
 #include <QSqlDatabase>
 #include <QtSql>
 #include <QMessageBox>
-static bool createConnection(){
+
+static bool createConnection(QSqlDatabase &db){
     //!Look up more about QSqlDatabase
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+
     db.setDatabaseName(":Bertha:");
     if(!db.open()){
         QMessageBox::critical(0, qApp->tr("Cannot open database"),
