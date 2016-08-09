@@ -21,6 +21,7 @@ private slots:
 
 private:
     Ui::addDbDialog *ui;
+    const int i=105;
 };
 
 #endif // ADDDBDIALOG_H

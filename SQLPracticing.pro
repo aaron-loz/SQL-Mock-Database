@@ -14,9 +14,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    adddbdialog.cpp
 
 HEADERS  += mainwindow.h \
-    createconnection.h
+    createconnection.h \
+    adddbdialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    adddbdialog.ui

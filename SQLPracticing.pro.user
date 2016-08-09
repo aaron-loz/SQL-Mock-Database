@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< master
 <!-- Written by QtCreator 4.0.3, 2016-08-10T20:51:30. -->
+=======
+<!-- Written by QtCreator 4.0.3, 2016-08-08T12:04:59. -->
+>>>>>>> Initialized Dialog and started work
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
