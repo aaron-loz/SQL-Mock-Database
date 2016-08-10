@@ -58,7 +58,12 @@ void MainWindow::on_addDbButton_clicked()
 //! if not, returns a messagebox saying data was not added due to params not being met
     QSqlQuery addQuery;
     if(addDialog->exec()){
-    if(addQuery.exec(addDialog->queryLine)){
-
+        qDebug()<<"addDialog executed";
+        qDebug()<<addDialog->queryLine;
+    if(addQuery.exec(addDialog->queryLine))
+        qDebug()<<"it works";
+    else{
+        qDebug()<<"Doesnt work";
+    }
     }
 }
