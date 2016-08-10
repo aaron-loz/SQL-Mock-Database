@@ -24,5 +24,5 @@ void addDbDialog::on_addDbDialog_accepted()
     //!If the lineEdit's params are met to be added to the QsqlQuery, this will continue,
     //! on MW, Query will add the params from a mock, public SqlQuery.
     i++;
-    queryLine = "INSERT INTO person VALUES (%1, '%2', '%3')".arg(i).arg(ui->FNLineEdit).arg(ui->LNLineEdit);
+    queryLine = tr("INSERT INTO person VAL%UES(%1, '%2', '%3')").arg(i).arg(ui->FNLineEdit->text()).arg(ui->LNLineEdit->text());
 }

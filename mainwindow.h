@@ -30,7 +30,6 @@ private:
     QSqlQuery mainQuery;
     addDbDialog *addDialog;
     Ui::MainWindow *ui;
-
 };
 
 #endif // MAINWINDOW_H
