@@ -13,9 +13,13 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 }
 
-
 MainWindow::~MainWindow()
 {
+    QSqlQuery endTestQuery;
+    //!Deletes any test runs, remove before finished version
+    if(endTestQuery.exec("DELETE FROM person")){
+        qDebug()<<"deleted.";
+    }
     delete ui;
 }
 
@@ -52,18 +56,14 @@ void MainWindow::on_DelDbButton_clicked()
 }
 
 void MainWindow::on_addDbButton_clicked()
-{
-//!Creates Dialog asking what user would add to each column of person's database, besides ID #,
-//!Once user presses enter or clicks OK, if params are met the person is added,
-//! if not, returns a messagebox saying data was not added due to params not being met
+{//for user to easily add more data to the database.
     QSqlQuery addQuery;
     if(addDialog->exec()){
-        qDebug()<<"addDialog executed";
-        qDebug()<<addDialog->queryLine;
-    if(addQuery.exec(addDialog->queryLine))
-        qDebug()<<"it works";
-    else{
-        qDebug()<<"Doesnt work";
+    if(addQuery.exec(addDialog->queryLine)){
+    QMessageBox::information(this, "Person Added", "The User was added. Press the 'view List' button to view the data");
     }
+        else{//Only happens if data entered is not a string`
+        QMessageBox::critical(this, "Error Adding Person", "Person's Data could not be added! \nInvalid!");
+        }
     }
 }
