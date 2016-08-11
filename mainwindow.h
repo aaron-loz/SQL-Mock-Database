@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "createconnection.h"
 #include "adddbdialog.h"
+#include "deldbdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,8 +28,10 @@ private slots:
     void on_addDbButton_clicked();
 
 private:
+    QSqlTableModel *MwModel;
     QSqlQuery mainQuery;
     addDbDialog *addDialog;
+    delDbDialog *delDialog;
     Ui::MainWindow *ui;
 };
 

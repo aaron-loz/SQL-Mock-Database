@@ -3,6 +3,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     addDialog(new addDbDialog),
+    delDialog(new delDbDialog),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -53,6 +54,10 @@ void MainWindow::on_DelDbButton_clicked()
 //! Whichever one is selected, runs delQuery that,
 //!Deletes whatever person's data is that the user identifies,
 //! Then sends messagebox saying that data was deleted
+    //QsqlTableModel is too rigid compared to a QAbstractTable Model
+    if(delDialog->exec()){
+
+    }
 }
 
 void MainWindow::on_addDbButton_clicked()
