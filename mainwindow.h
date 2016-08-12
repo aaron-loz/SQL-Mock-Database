@@ -26,10 +26,7 @@ private slots:
     void on_DelDbButton_clicked();
 
     void on_addDbButton_clicked();
-
 private:
-    QSqlTableModel *MwModel;
-    QSqlQuery mainQuery;
     addDbDialog *addDialog;
     delDbDialog *delDialog;
     Ui::MainWindow *ui;

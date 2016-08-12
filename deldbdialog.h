@@ -2,7 +2,9 @@
 #define DELDBDIALOG_H
 
 #include <QDialog>
-#include <QSqlTableModel>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlRecord>
 
 namespace Ui {
 class delDbDialog;
@@ -17,9 +19,15 @@ public:
     ~delDbDialog();
 private:
     Ui::delDbDialog *ui;
+    QSqlQueryModel mainQueryModel;
+    QString *tempFirstName[10];
+    QString *tempLastName[10];
+    int *id[10];
 public slots:
-    void setupTable();
+    void queryIntoModel();
 private slots:
+    void on_tableView_doubleClicked(const QModelIndex &index);
+    void on_buttonBox_rejected();
 };
 
 #endif // DELDBDIALOG_H

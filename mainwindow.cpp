@@ -50,13 +50,9 @@ void MainWindow::on_EditDbButton_clicked()
 }
 void MainWindow::on_DelDbButton_clicked()
 {
-//!Creates Dialog with model of database for user to click,
-//! Whichever one is selected, runs delQuery that,
-//!Deletes whatever person's data is that the user identifies,
-//! Then sends messagebox saying that data was deleted
-    //QsqlTableModel is too rigid compared to a QAbstractTable Model
+//Deletes whatever person's data is that the user identifies through doubleclick
+    delDialog->queryIntoModel();
     if(delDialog->exec()){
-
     }
 }
 
@@ -67,7 +63,7 @@ void MainWindow::on_addDbButton_clicked()
     if(addQuery.exec(addDialog->queryLine)){
     QMessageBox::information(this, "Person Added", "The User was added. Press the 'view List' button to view the data");
     }
-        else{//Only happens if data entered is not a string`
+    else{//Only happens if data entered is not a string`
         QMessageBox::critical(this, "Error Adding Person", "Person's Data could not be added! \nInvalid!");
         }
     }
