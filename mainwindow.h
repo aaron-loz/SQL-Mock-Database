@@ -5,6 +5,7 @@
 #include "createconnection.h"
 #include "adddbdialog.h"
 #include "deldbdialog.h"
+#include "editdbdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +30,7 @@ private slots:
 private:
     addDbDialog *addDialog;
     delDbDialog *delDialog;
+    editDbDialog *editDialog;
     Ui::MainWindow *ui;
 };
 

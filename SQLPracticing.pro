@@ -16,13 +16,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     adddbdialog.cpp \
-    deldbdialog.cpp
+    deldbdialog.cpp \
+    editdbdialog.cpp
 
 HEADERS  += mainwindow.h \
     createconnection.h \
     adddbdialog.h \
-    deldbdialog.h
+    deldbdialog.h \
+    editdbdialog.h
 
 FORMS    += mainwindow.ui \
     adddbdialog.ui \
-    deldbdialog.ui
+    deldbdialog.ui \
+    editdbdialog.ui

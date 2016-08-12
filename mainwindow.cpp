@@ -4,6 +4,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     addDialog(new addDbDialog),
     delDialog(new delDbDialog),
+    editDialog(new editDbDialog),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -47,6 +48,8 @@ void MainWindow::on_EditDbButton_clicked()
    //!Create dialog that asks what person to edit,
    //!  then implements user input into editQuery, wherein brings up data for person to user,
    //!  then replaces data with whatever user edits data
+    if(editDialog->exec()){
+    }
 }
 void MainWindow::on_DelDbButton_clicked()
 {
