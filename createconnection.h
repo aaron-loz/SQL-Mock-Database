@@ -18,7 +18,7 @@ static bool createConnection(QSqlDatabase &db){
                                      return false;
     }
     QSqlQuery query;
-    query.exec("Create table person (id isnt primary key, "
+    query.exec("Create table person (id int auto_increment not null primary key, "
                "firstname varchar(20), lastname varchar(20))");
     query.exec("insert into person values(101, 'Danny', 'Young')");
     query.exec("insert into person values(102, 'Christine', 'Holand')");

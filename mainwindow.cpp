@@ -43,11 +43,10 @@ void MainWindow::on_viewDbButton_clicked()
 }
 
 void MainWindow::on_EditDbButton_clicked()
-{
-   QSqlQuery editQuery;
-   //!Create dialog that asks what person to edit,
+{   //!Create dialog that asks what person to edit,
    //!  then implements user input into editQuery, wherein brings up data for person to user,
-   //!  then replaces data with whatever user edits data
+   //!  then replaces data with whatever user edits
+    editDialog->updateTable();
     if(editDialog->exec()){
     }
 }

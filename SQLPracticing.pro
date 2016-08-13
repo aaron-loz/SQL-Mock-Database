@@ -17,15 +17,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     adddbdialog.cpp \
     deldbdialog.cpp \
-    editdbdialog.cpp
+    editdbdialog.cpp \
+    editdbpopupdialog.cpp
 
 HEADERS  += mainwindow.h \
     createconnection.h \
     adddbdialog.h \
     deldbdialog.h \
-    editdbdialog.h
+    editdbdialog.h \
+    editdbpopupdialog.h
 
 FORMS    += mainwindow.ui \
     adddbdialog.ui \
     deldbdialog.ui \
-    editdbdialog.ui
+    editdbdialog.ui \
+    editdbpopupdialog.ui

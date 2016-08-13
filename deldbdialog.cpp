@@ -28,6 +28,7 @@ void delDbDialog::queryIntoModel(){
 
 delDbDialog::~delDbDialog()
 {
+//!Add deletion of pointer memory here.
     delete ui;
 }
 
@@ -48,8 +49,6 @@ void delDbDialog::on_tableView_doubleClicked(const QModelIndex &index)
             //doesnt store tempdata unless user clicks yes.Currently, array stores first ten names deleted
             if(tempFirstName[i]->isEmpty()){
             *tempFirstName[i]=indexName;
-            qDebug()<<i<<": ";
-            qDebug()<<*tempFirstName[i];
             *tempLastName[i]=lastName;
             *id[i]=tempId;
             break;
