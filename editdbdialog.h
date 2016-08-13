@@ -22,9 +22,9 @@ public slots:
     void updateTable();
 
 private:
+    editDbPopupDialog *popupDialog;
     Ui::editDbDialog *ui;
     QSqlQueryModel mainQueryModel;
-    editDbPopupDialog *popupDialog;
 };
 
 #endif // EDITDBDIALOG_H

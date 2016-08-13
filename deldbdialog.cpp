@@ -7,12 +7,11 @@
 delDbDialog::delDbDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::delDbDialog)
-{//!Initializes TableView, user double clicks/selects one of the database persons. Then QMessageBox confirms deletion,
-    //!Then sends Delete command for sqlQuery
+{
     this->setSizeGripEnabled(false);
     ui->setupUi(this);
     for(int i=0;i<10;i++){
-        //array of pointers in case of multiple mistaken deletions by the user.
+    //array of pointers in case of multiple mistaken deletions by the user.
     tempFirstName[i]= new QString;
     tempLastName[i]= new QString;
     id[i]=new int;

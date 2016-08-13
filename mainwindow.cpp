@@ -19,9 +19,7 @@ MainWindow::~MainWindow()
 {
     QSqlQuery endTestQuery;
     //!Deletes any test runs, remove before finished version
-    if(endTestQuery.exec("DELETE FROM person")){
-        qDebug()<<"deleted.";
-    }
+    endTestQuery.exec("DELETE FROM person");
     delete ui;
 }
 
@@ -30,22 +28,22 @@ void MainWindow::on_viewDbButton_clicked()
     QSqlQuery viewQuery;
     if(viewQuery.exec("SELECT * FROM person")){
         QSqlRecord testRecord=viewQuery.record();
-        int fieldNum=testRecord.indexOf("firstname");
+        int firstNum=testRecord.indexOf("firstname");
+        int lastNum=testRecord.indexOf("lastname");
         QString labelText;
 
         while(viewQuery.next()){//indexes the 2nd column, firstname, and outputs it into qDebug for debugging
-            qDebug()<<viewQuery.value(fieldNum).toString();
             labelText+="\n";
-            labelText+=viewQuery.value(fieldNum).toString();
+            labelText+=viewQuery.value(firstNum).toString();
+            labelText+=viewQuery.value(lastNum).toString();
         }
         ui->label->setText(labelText);
     }
 }
 
 void MainWindow::on_EditDbButton_clicked()
-{   //!Create dialog that asks what person to edit,
-   //!  then implements user input into editQuery, wherein brings up data for person to user,
-   //!  then replaces data with whatever user edits
+{
+   //  then implements user input into a Query, wherein brings up data for person to user,
     editDialog->updateTable();
     if(editDialog->exec()){
     }

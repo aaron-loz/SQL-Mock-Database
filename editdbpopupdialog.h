@@ -2,6 +2,7 @@
 #define EDITDBPOPUPDIALOG_H
 
 #include <QDialog>
+#include <QSqlQuery>
 
 namespace Ui {
 class editDbPopupDialog;
@@ -15,12 +16,13 @@ public:
     explicit editDbPopupDialog(QWidget *parent = 0);
     ~editDbPopupDialog();
 public slots:
-    setEditableData(int &id, QString &FN, QString &LN);
+    void setEditableData(int &id, QString &FN, QString &LN);
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::editDbPopupDialog *ui;
-    int idEdit;
-    QString FNedit;
-    QString LNedit;
+    QString oldFN;
 };
 
 #endif // EDITDBPOPUPDIALOG_H
