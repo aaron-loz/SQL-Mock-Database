@@ -14,13 +14,13 @@ editDbDialog::~editDbDialog()
 {
     delete ui;
 }
-void editDbDialog::updateTable(){
+void editDbDialog::updateTable(){//Allows table to update constantly with any change
     mainQueryModel.setQuery("SELECT * FROM person");
     ui->tableView->setModel(&mainQueryModel);
 }
 
 void editDbDialog::on_tableView_doubleClicked(const QModelIndex &index)
-{
+{//Instead of relying on Ok Button, double click is the one used.
     QString firstIndex = mainQueryModel.record(index.row()).value("firstname").toString();
     QString lastIndex = mainQueryModel.record(index.row()).value("lastname").toString();
     int idIndex = mainQueryModel.record(index.row()).value("id").toInt();

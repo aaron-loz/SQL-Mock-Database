@@ -15,14 +15,14 @@ editDbPopupDialog::~editDbPopupDialog()
 
 void editDbPopupDialog::setEditableData(int &id, QString &FN, QString &LN){
     QString idString= QString::number(id);
-    ui->IDEdit->setText(idString);
+    ui->IDEdit->setText(idString);//Quickly adds text to lineEdit for ease of use
     ui->FNEdit->setText(FN);
     ui->LNEdit->setText(LN);
     oldFN=FN;
 }
 
 void editDbPopupDialog::on_buttonBox_accepted()
-{
+{//So User can change the Query
     QSqlQuery acceptedQuery;
     int id=ui->IDEdit->text().toInt();
     QString FN=ui->FNEdit->text();

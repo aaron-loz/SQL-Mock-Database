@@ -19,7 +19,7 @@ delDbDialog::delDbDialog(QWidget *parent) :
     setWindowTitle(tr("Delete Person From Database"));
 }
 
-void delDbDialog::queryIntoModel(){
+void delDbDialog::queryIntoModel(){//updates Table, outdated name
     mainQueryModel.setQuery("SELECT * FROM person");
     ui->tableView->setModel(&mainQueryModel);
 }
@@ -27,7 +27,6 @@ void delDbDialog::queryIntoModel(){
 
 delDbDialog::~delDbDialog()
 {
-//!Add deletion of pointer memory here.
     delete ui;
 }
 
@@ -65,4 +64,3 @@ void delDbDialog::on_buttonBox_rejected()
                          .arg(*id[i]).arg(*tempFirstName[i]).arg(*tempLastName[i]));
     }
 }
-//!Planning on sorting via column through tableView data

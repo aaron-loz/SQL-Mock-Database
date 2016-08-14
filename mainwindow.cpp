@@ -17,9 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    QSqlQuery endTestQuery;
-    //!Deletes any test runs, remove before finished version
-    endTestQuery.exec("DELETE FROM person");
     delete ui;
 }
 
@@ -32,9 +29,10 @@ void MainWindow::on_viewDbButton_clicked()
         int lastNum=testRecord.indexOf("lastname");
         QString labelText;
 
-        while(viewQuery.next()){//indexes the 2nd column, firstname, and outputs it into qDebug for debugging
+        while(viewQuery.next()){//indexes the 2nd column, firstname, and outputs it for quick User visibility
             labelText+="\n";
             labelText+=viewQuery.value(firstNum).toString();
+            labelText+=" ";
             labelText+=viewQuery.value(lastNum).toString();
         }
         ui->label->setText(labelText);

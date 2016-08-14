@@ -5,7 +5,7 @@
 #include <QMessageBox>
 
 static bool createConnection(QSqlDatabase &db){
-    //!Look up more about QSqlDatabase
+    //Mock connection, comes from QT, can be changed for other uses.
 
     db.setDatabaseName(":Bertha:");
     if(!db.open()){
